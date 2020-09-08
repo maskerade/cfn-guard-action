@@ -1,0 +1,2 @@
+AWS::SQS::Queue VisibilityTimeout == 300 
+AWS::SQS::Queue KmsMasterKeyId == /.*/ <<  No encryption set 

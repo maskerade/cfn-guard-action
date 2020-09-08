@@ -1,0 +1,14 @@
+name: 'cfn-guard-action'
+description: 'Runs Cloudformation Guard'
+author: 'Stefan <stefdefig@hotmail.co.uk>'
+branding:
+    icon: 'terminal'
+    color: 'yellow'
+inputs:
+    cfn_subdirectory:
+        description: 'Sub Directory of cloudformation templates'
+        required: true
+        default: 'cdk.out'
+runs:
+    using: 'docker'
+    image: './Dockerfile'
