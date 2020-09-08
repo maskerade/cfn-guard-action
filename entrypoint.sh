@@ -7,7 +7,7 @@ if [ "${INPUT_CFN_SUBDIRECTORY}" == "" ]; then
 fi
 
 # List templates
-grep -r --exclude="entrypoint.sh" 'Resources' ${INPUT_CFN_SUBDIRECTORY}/* |cut -d':' -f1 > /tmp/cfn_templates
+grep -r 'Resources' ${INPUT_CFN_SUBDIRECTORY}/* |cut -d':' -f1 > /tmp/cfn_templates
 
 if [[ -d "${PWD}/reports" ]] ; then
     echo "Cleaning up existing report files"
