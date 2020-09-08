@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check subdirectory
 if [ "${INPUT_CFN_SUBDIRECTORY}" == "" ]; then
