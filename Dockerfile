@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM ubuntu:latest
 
 ADD ./bin/cfn-guard /usr/bin/cfn-guard
 ADD ./bin/cfn-guard-rulegen /usr/bin/cfn-guard-rulegen
