@@ -1,5 +1,10 @@
 #!/bin/sh
 
+set -x
+ls -la
+ls -la rules
+ls -la cdk.out
+
 # Check subdirectory
 if [ -z ${INPUT_CFN_SUBDIRECTORY} ] ; then
     echo "Input cfn_subdirectory cannot be empty"
