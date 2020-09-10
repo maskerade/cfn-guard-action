@@ -1,9 +1,6 @@
 #!/bin/sh
 
 set -x
-ls -la
-ls -la rules
-ls -la cdk.out
 
 # Check subdirectory
 if [ -z ${INPUT_CFN_SUBDIRECTORY} ] ; then
@@ -30,8 +27,11 @@ for x in $(cat /tmp/cfn_templates); do
     echo "Filename: ${x}" > ${PWD}/reports/results${count}.txt
     echo "Date Checked: "$(date +%Y%m%d_%H%M%S)  >> ${PWD}/reports/results${count}.txt
     echo "## Check results ##" >> ${PWD}/reports/results${count}.txt
+    cat ${PWD}/${x}
     cfn-guard --strict-checks --rule_set /rules/cfn-guard-sqs.ruleset  --template ${PWD}/${x} >> ${PWD}/reports/results${count}.txt
     cfn-guard --strict-checks --rule_set /rules/cfn-guard-sqs.ruleset  --template ${PWD}/${x} 
+    cfn-guard help
+    cfn-guard --version
     echo "" >> ${PWD}/reports/results${count}.txt
     count=`expr $count + 1`
 done
